@@ -23,8 +23,6 @@ function CoreRedux1() {
 
 
 
-  
-
   return (
     <div className="p-4">
       <button onClick={handleCountP} className="bg-green-400">

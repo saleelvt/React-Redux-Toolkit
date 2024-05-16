@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement, changeName ,changeGouse} from "./Counter-store";
+import { increment, decrement, changeName, changeGouse } from "./Counter-store";
 import { useRef } from "react";
+
 
 function CounterApp() {
   const count = useSelector((state) => state.count);
@@ -13,14 +14,12 @@ function CounterApp() {
     reff.current.focus();
   });
 
-  const handleSubmit=(e)=>{
-    e.preventDefault()
-    const gouseName=e.target.name.value
-    
-    dispatch(changeGouse(gouseName))
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const gouseName = e.target.name.value;
 
-  }
-
+    dispatch(changeGouse(gouseName));
+  };
   return (
     <div>
       <h1 className="text-center">Welcome {count.name}</h1>
@@ -48,14 +47,16 @@ function CounterApp() {
         }}
         className="bg-red-400 p-2 m-2"
       >
+        
         {" "}
-        Gouse {" "}
+        Gouse{" "}
       </button>
 
       <form onSubmit={handleSubmit}>
         <input
           ref={reff}
-          type="text" name="name"
+          type="text"
+          name="name"
           className="border bg-gray-300 ml-5 my-5"
         />
         <input type="submit" />

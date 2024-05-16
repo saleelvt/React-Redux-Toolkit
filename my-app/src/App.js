@@ -9,20 +9,19 @@
 import "./App.css";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
-import CounterSlice from "./components/Rtoolkit/Counter-store"
-import Counter from './components/Rtoolkit/CounterApp'
+// import CounterSlice from "./components/Rtoolkit/Counter-store"
+// import Counter from './components/Rtoolkit/CounterApp'
 
+import PracticeStore from "./components/practice/practice-store";
+import Practice from "./components/practice/practice";
 
   const store=configureStore({
-
   reducer:{
-    count:CounterSlice
+    state: PracticeStore
   }
 })
 
 function App() {
-
-
 
   return (
 
@@ -30,7 +29,7 @@ function App() {
     <div>
       <Provider store={store}>
         
-        <Counter />
+        <Practice />
 
       </Provider>
      
