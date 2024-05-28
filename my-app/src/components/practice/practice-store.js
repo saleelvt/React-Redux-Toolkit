@@ -20,12 +20,13 @@ const Practiceslice = createSlice({
     aboutSaleel:(state,action)=>{
         state.name = action.payload
     },
+
     handleData:(state,action)=>{
 
       state.datas.push(action.payload)
       localStorage.setItem('key',JSON.stringify(state.datas))
       // localStorage.removeItem('key',JSON.stringify(state.datas))
-
+      
     }
   },
 });

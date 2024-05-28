@@ -9,6 +9,7 @@
 import "./App.css";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
+import Sample from "./components/sample";
 // import CounterSlice from "./components/Rtoolkit/Counter-store"
 // import Counter from './components/Rtoolkit/CounterApp'
 
@@ -23,13 +24,17 @@ import Practice from "./components/practice/practice";
 
 function App() {
 
+  const data='saleel from valanchery'
+
   return (
 
 
     <div>
+      
       <Provider store={store}>
         
-        <Practice />
+        <Sample />
+            
 
       </Provider>
      

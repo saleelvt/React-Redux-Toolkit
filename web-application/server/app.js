@@ -13,6 +13,7 @@ mongoose
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
+
 const corsOptions = {
   origin: "http://localhost:3000",
   methods: ["GET", "POST", "PUT", "DELETE"],
@@ -27,7 +28,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/", userRouter);
-app.use("/admin",adminRouter);
+app.use("/admin",adminRouter)
 app.use("/deleteButton",adminRouter)
 
 app.use((req, res, next) => {

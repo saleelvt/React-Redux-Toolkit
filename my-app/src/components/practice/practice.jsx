@@ -13,7 +13,6 @@ function Practice() {
 
   console.log("my data ", datas);
   const dispatch = useDispatch();
-
   let handlForm = (e) => {
     e.preventDefault();
     const Name = e.target.name.value;
@@ -33,7 +32,6 @@ function Practice() {
       >
         increment
       </button>
-
       <h1>value: {value}</h1>
 
       <button

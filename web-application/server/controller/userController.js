@@ -28,16 +28,44 @@ const createUser = async (req, res) => {
   }
 };
 
+
+
+const userLogin = async (req,res) => {
+
+try {
+
+  const {username,password}=req.body
+  console.log('my body ',req.body)
+
+  const user = await User.findOne({username:username})
+  const hashedPassword=bcrypt.compare(password, user.password)
+if(hashedPassword){
+  res.status(200).json(user)
+}else{
+   res.status(404).json({error: 'saleel is a good boy '})
+}
+
+
+ 
+
+  
+} catch (error) {
+  
+}
+
+};
+
 const listUser = async (req, res) => {
   try {
-    const users = await User.find()
+    const users = await User.find();
     res.status(200).json(users);
   } catch (error) {
-  console.log(error);
+    console.log(error);
   }
 };
 
 module.exports = {
   createUser,
   listUser,
+  userLogin
 };

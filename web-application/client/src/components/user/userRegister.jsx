@@ -1,9 +1,10 @@
 import axios from "axios";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function UserRegister() {
 
-
+ const Navigate =useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,6 +15,7 @@ function UserRegister() {
       .post("http://localhost:9999/create-user/", { username, email, password })
       .then((response) => {
         console.log("User created:", response.data);
+        Navigate('/userLogin')
       })
       
       .catch((error) => {
